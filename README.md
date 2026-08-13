@@ -12,6 +12,10 @@ OpenAIの公式ステータスをmacOSで確認する、SwiftUI／WidgetKit製�
 > [!IMPORTANT]
 > このプロジェクトは個人開発の非公式ツールです。OpenAIによる提供、承認、提携を示すものではありません。
 
+## 解説記事
+
+- [SwiftUI + WidgetKitでOpenAIの障害を見逃さないmacOSアプリを作った（Qiita）](https://qiita.com/KohN/items/42685192921c730d5f8b)
+
 ## 必要環境
 
 - macOS 14.0以上
