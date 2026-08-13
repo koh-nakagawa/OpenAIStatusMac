@@ -1,0 +1,397 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00100000000000000000001 /* OpenAIStatusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000001 /* OpenAIStatusApp.swift */; };
+		A00100000000000000000002 /* StatusDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000002 /* StatusDashboardView.swift */; };
+		A00100000000000000000003 /* StatusModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000003 /* StatusModels.swift */; };
+		A00100000000000000000004 /* StatusClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000004 /* StatusClient.swift */; };
+		A00100000000000000000005 /* OpenAIStatusWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000005 /* OpenAIStatusWidget.swift */; };
+		A00100000000000000000006 /* StatusModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000003 /* StatusModels.swift */; };
+		A00100000000000000000007 /* StatusClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000004 /* StatusClient.swift */; };
+		A00100000000000000000008 /* OpenAIStatusWidget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B00100000000000000000008 /* OpenAIStatusWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A00100000000000000000009 /* NotificationSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000010 /* NotificationSupport.swift */; };
+		A00100000000000000000010 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000011 /* NotificationSettingsView.swift */; };
+		A00100000000000000000011 /* StatusNotificationPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00100000000000000000012 /* StatusNotificationPolicy.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C00100000000000000000001 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D00100000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E00100000000000000000002;
+			remoteInfo = OpenAIStatusWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F00100000000000000000001 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A00100000000000000000008 /* OpenAIStatusWidget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B00100000000000000000001 /* OpenAIStatusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIStatusApp.swift; sourceTree = "<group>"; };
+		B00100000000000000000002 /* StatusDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDashboardView.swift; sourceTree = "<group>"; };
+		B00100000000000000000003 /* StatusModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusModels.swift; sourceTree = "<group>"; };
+		B00100000000000000000004 /* StatusClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusClient.swift; sourceTree = "<group>"; };
+		B00100000000000000000005 /* OpenAIStatusWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenAIStatusWidget.swift; sourceTree = "<group>"; };
+		B00100000000000000000006 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B00100000000000000000007 /* OpenAI Status.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OpenAI Status.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00100000000000000000008 /* OpenAIStatusWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OpenAIStatusWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B00100000000000000000009 /* OpenAIStatusWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = OpenAIStatusWidget.entitlements; sourceTree = "<group>"; };
+		B00100000000000000000010 /* NotificationSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSupport.swift; sourceTree = "<group>"; };
+		B00100000000000000000011 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		B00100000000000000000012 /* StatusNotificationPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusNotificationPolicy.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F00200000000000000000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00200000000000000000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		G00100000000000000000001 = {
+			isa = PBXGroup;
+			children = (
+				G00100000000000000000002 /* OpenAIStatus */,
+				G00100000000000000000006 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		G00100000000000000000002 /* OpenAIStatus */ = {
+			isa = PBXGroup;
+			children = (
+				G00100000000000000000003 /* App */,
+				G00100000000000000000004 /* Shared */,
+				G00100000000000000000005 /* Widget */,
+			);
+			path = OpenAIStatus;
+			sourceTree = "<group>";
+		};
+		G00100000000000000000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				B00100000000000000000001 /* OpenAIStatusApp.swift */,
+				B00100000000000000000002 /* StatusDashboardView.swift */,
+				B00100000000000000000010 /* NotificationSupport.swift */,
+				B00100000000000000000011 /* NotificationSettingsView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		G00100000000000000000004 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B00100000000000000000003 /* StatusModels.swift */,
+				B00100000000000000000004 /* StatusClient.swift */,
+				B00100000000000000000012 /* StatusNotificationPolicy.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		G00100000000000000000005 /* Widget */ = {
+			isa = PBXGroup;
+			children = (
+				B00100000000000000000005 /* OpenAIStatusWidget.swift */,
+				B00100000000000000000006 /* Info.plist */,
+				B00100000000000000000009 /* OpenAIStatusWidget.entitlements */,
+			);
+			path = Widget;
+			sourceTree = "<group>";
+		};
+		G00100000000000000000006 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B00100000000000000000007 /* OpenAI Status.app */,
+				B00100000000000000000008 /* OpenAIStatusWidget.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E00100000000000000000001 /* OpenAI Status */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = H00100000000000000000002 /* Build configuration list for PBXNativeTarget "OpenAI Status" */;
+			buildPhases = (
+				F00300000000000000000001 /* Sources */,
+				F00200000000000000000001 /* Frameworks */,
+				F00400000000000000000001 /* Resources */,
+				F00100000000000000000001 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C00200000000000000000001 /* PBXTargetDependency */,
+			);
+			name = "OpenAI Status";
+			productName = OpenAIStatus;
+			productReference = B00100000000000000000007 /* OpenAI Status.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E00100000000000000000002 /* OpenAIStatusWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = H00100000000000000000003 /* Build configuration list for PBXNativeTarget "OpenAIStatusWidget" */;
+			buildPhases = (
+				F00300000000000000000002 /* Sources */,
+				F00200000000000000000002 /* Frameworks */,
+				F00400000000000000000002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OpenAIStatusWidget;
+			productName = OpenAIStatusWidget;
+			productReference = B00100000000000000000008 /* OpenAIStatusWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D00100000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					E00100000000000000000001 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+					E00100000000000000000002 = {
+						CreatedOnToolsVersion = 26.0;
+					};
+				};
+			};
+			buildConfigurationList = H00100000000000000000001 /* Build configuration list for PBXProject "OpenAIStatusMac" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ja;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				ja,
+				en,
+				Base,
+			);
+			mainGroup = G00100000000000000000001;
+			productRefGroup = G00100000000000000000006 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E00100000000000000000001 /* OpenAI Status */,
+				E00100000000000000000002 /* OpenAIStatusWidget */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F00400000000000000000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00400000000000000000002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F00300000000000000000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00100000000000000000001 /* OpenAIStatusApp.swift in Sources */,
+				A00100000000000000000002 /* StatusDashboardView.swift in Sources */,
+				A00100000000000000000003 /* StatusModels.swift in Sources */,
+				A00100000000000000000004 /* StatusClient.swift in Sources */,
+				A00100000000000000000009 /* NotificationSupport.swift in Sources */,
+				A00100000000000000000010 /* NotificationSettingsView.swift in Sources */,
+				A00100000000000000000011 /* StatusNotificationPolicy.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F00300000000000000000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00100000000000000000005 /* OpenAIStatusWidget.swift in Sources */,
+				A00100000000000000000006 /* StatusModels.swift in Sources */,
+				A00100000000000000000007 /* StatusClient.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C00200000000000000000001 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E00100000000000000000002 /* OpenAIStatusWidget */;
+			targetProxy = C00100000000000000000001 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		I00100000000000000000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		I00100000000000000000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		I00100000000000000000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenAI Status";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor;
+				PRODUCT_NAME = "OpenAI Status";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		I00100000000000000000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "OpenAI Status";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor;
+				PRODUCT_NAME = "OpenAI Status";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		I00100000000000000000005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = OpenAIStatus/Widget/OpenAIStatusWidget.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OpenAIStatus/Widget/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor.Widget;
+				PRODUCT_NAME = OpenAIStatusWidget;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		I00100000000000000000006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CODE_SIGN_ENTITLEMENTS = OpenAIStatus/Widget/OpenAIStatusWidget.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OpenAIStatus/Widget/Info.plist;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor.Widget;
+				PRODUCT_NAME = OpenAIStatusWidget;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		H00100000000000000000001 /* Build configuration list for PBXProject "OpenAIStatusMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				I00100000000000000000001 /* Debug */,
+				I00100000000000000000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		H00100000000000000000002 /* Build configuration list for PBXNativeTarget "OpenAI Status" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				I00100000000000000000003 /* Debug */,
+				I00100000000000000000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		H00100000000000000000003 /* Build configuration list for PBXNativeTarget "OpenAIStatusWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				I00100000000000000000005 /* Debug */,
+				I00100000000000000000006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D00100000000000000000001 /* Project object */;
+}
