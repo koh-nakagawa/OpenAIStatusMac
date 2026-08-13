@@ -1,33 +1,36 @@
 # OpenAI Status for Mac
 
-OpenAIの公式ステータスをmacOSで確認する、SwiftUI／WidgetKit製の非公式オープンソースアプリです。
+English | [日本語](README_JPN.md)
 
-- アプリ画面で全体状態・各サービス・進行中の障害を表示
-- デスクトップ／通知センター用の小・中ウィジェット
-- macOS 26以降のコントロールセンター用ControlWidget
-- 新しい障害、サービス低下、復旧をmacOS通知
-- 通知イベントと対象サービスを個別設定
-- 同じ異常を繰り返し通知しない差分検知
+An unofficial, open-source macOS app built with SwiftUI and WidgetKit for monitoring the official OpenAI status page.
+
+- View the overall status, individual services, and active incidents
+- Add small and medium widgets to the desktop or Notification Center
+- Add a Control Widget to Control Center on macOS 26 or later
+- Receive macOS notifications for new incidents, service degradation, and recovery
+- Choose which event types and services should trigger notifications
+- Avoid repeated alerts by notifying only when the status changes
 
 > [!IMPORTANT]
-> このプロジェクトは個人開発の非公式ツールです。OpenAIによる提供、承認、提携を示すものではありません。
+> This is an unofficial personal project. It is not provided, endorsed, or affiliated with OpenAI.
 
-## 解説記事
+## Japanese guide
 
-- [SwiftUI + WidgetKitでOpenAIの障害を見逃さないmacOSアプリを作った（Qiita）](https://qiita.com/KohN/items/42685192921c730d5f8b)
+- [Qiita: Building a macOS OpenAI status monitor with SwiftUI and WidgetKit](https://qiita.com/KohN/items/42685192921c730d5f8b)
+- [Japanese README](README_JPN.md)
 
-## 必要環境
+## Requirements
 
-- macOS 14.0以上
-- Xcode 26.0以上（macOS 26 SDKのControlWidget APIをコンパイルするため）
+- macOS 14.0 or later
+- Xcode 26.0 or later, required to compile the ControlWidget API from the macOS 26 SDK
 - Git
-- ウィジェットを実際に登録する場合は、Xcodeへ追加したApple ID
+- An Apple ID added to Xcode if you want macOS to register the widget extension
 
-アプリ本体と通常のWidgetKitウィジェットはmacOS 14以上で動作します。コントロールセンター用ControlWidgetはmacOS 26以上でのみ表示されます。
+The main app and standard WidgetKit widgets support macOS 14 or later. The Control Center widget is available only on macOS 26 or later.
 
-## 最短手順
+## Quick start
 
-ターミナルで次を実行します。
+Run the following commands in Terminal:
 
 ```sh
 git clone https://github.com/koh-nakagawa/OpenAIStatusMac.git
@@ -35,121 +38,121 @@ cd OpenAIStatusMac
 ./scripts/setup.sh
 ```
 
-`setup.sh`は環境、テスト、公式APIへの接続、署名なしのDebugビルドを確認した後、Xcodeプロジェクトを開きます。
+`setup.sh` checks the development environment, runs the tests, verifies access to the official status API, performs an unsigned Debug build, and then opens the Xcode project.
 
-Xcodeが開いたら次の操作を行います。
+When Xcode opens:
 
-1. 左側で青いプロジェクトアイコン `OpenAIStatusMac` を選びます。
-2. `TARGETS` の `OpenAI Status` を選び、`Signing & Capabilities` を開きます。
-3. `Team` に自分のApple IDのTeamを選びます。
-4. `TARGETS` の `OpenAIStatusWidget` にも、同じTeamを設定します。
-5. 上部のSchemeを `OpenAI Status`、実行先を `My Mac` にします。
-6. ▶︎を押して起動します。
-7. 初回の通知確認では「許可」を選びます。
+1. Select the blue `OpenAIStatusMac` project icon in the navigator.
+2. Select the `OpenAI Status` target and open `Signing & Capabilities`.
+3. Choose your Apple ID team under `Team`.
+4. Select the `OpenAIStatusWidget` target and choose the same team.
+5. Select the `OpenAI Status` scheme and `My Mac` as the run destination.
+6. Press Run.
+7. Allow notifications when macOS prompts you on the first launch.
 
-Bundle Identifierが利用できないと表示された場合は、2つのTargetを自分用の一意な値へ変更してください。
+If Xcode reports that a Bundle Identifier is unavailable, replace both identifiers with values unique to you:
 
 ```text
-例:
+Example:
 com.yourname.OpenAIStatusMonitor
 com.yourname.OpenAIStatusMonitor.Widget
 ```
 
-親アプリとWidget Extensionは、必ず同じSigning Teamで署名してください。
+The host app and Widget Extension must be signed with the same team.
 
-## ウィジェットの追加
+## Add the desktop widget
 
-アプリを一度起動した後、次の手順で追加します。
+Launch the app once, then:
 
-1. デスクトップを右クリックします。
-2. 「ウィジェットを編集」を選びます。
-3. `OpenAI Status` を検索します。
-4. 小または中サイズをデスクトップへ追加します。
+1. Right-click the desktop.
+2. Choose **Edit Widgets**.
+3. Search for `OpenAI Status`.
+4. Add the small or medium widget to the desktop.
 
-macOS 26以降では、コントロールセンターの編集画面から `OpenAI Status` コントロールも追加できます。通常のデスクトップウィジェットとControlWidgetは別の実装です。
+On macOS 26 or later, you can also add the `OpenAI Status` control from Control Center's editing interface. The desktop widget and Control Widget are separate implementations.
 
-## 通知
+## Notifications
 
-アプリ右上のベル、またはアプリメニューの「設定」から変更できます。
+Open notification settings from the bell button in the app header or from the app's Settings menu.
 
-| 通知項目 | デフォルト |
+| Notification | Default |
 | --- | --- |
-| 新しい障害 | ON |
-| サービスの性能低下・停止 | ON |
-| 障害・サービスの復旧 | ON |
-| 障害情報の更新 | OFF |
-| ステータス取得失敗 | OFF |
-| 通知対象サービス | すべて |
+| New incidents | ON |
+| Service degradation or outage | ON |
+| Incident or service recovery | ON |
+| Incident updates | OFF |
+| Status-fetch failures | OFF |
+| Monitored services | All services |
 
-アプリは起動中に約1分間隔で確認します。ウインドウを閉じてもアプリプロセスが動いていれば監視を続けますが、アプリを終了すると停止します。
+The app checks the status approximately once per minute while it is running. Monitoring continues after closing the window as long as the app process remains active, but stops when the app quits.
 
-ウィジェットは約15分後の更新をリクエストします。実際の更新時刻はmacOSが電力状況などを考慮して決定します。
+The widget requests another timeline update after approximately 15 minutes. macOS determines the actual refresh time based on power and system conditions.
 
-## 検証だけ実行する
+## Run verification only
 
 ```sh
 ./scripts/verify.sh
 ```
 
-このスクリプトは次を確認します。
+The script verifies:
 
-- plist／entitlements／Xcode projectの構文
-- SwiftPMの4テスト
-- OpenAI公式ステータスAPIのライブデコード
-- 署名を無効にしたホストアプリ＋Widget ExtensionのDebugビルド
+- plist, entitlements, and Xcode project syntax
+- Four SwiftPM/XCTest tests
+- Live decoding of the official OpenAI status API
+- An unsigned Debug build of the host app and embedded Widget Extension
 
-実際のウィジェット登録には署名が必要なため、検証後はXcodeで両Targetに同じTeamを設定してください。
+Widget registration itself requires signing. After verification, set the same Xcode team for both targets.
 
-## 取得先
+## Data sources
 
 - `https://status.openai.com/api/v2/summary.json`
 - `https://status.openai.com/api/v2/incidents.json`
 
-APIキーやOpenAIアカウントへのログインは不要です。ステータス取得にはHTTPSを利用し、認証情報やレスポンス本文は保存しません。
+No API key or OpenAI account is required. Requests use HTTPS. The app does not store credentials or status-response bodies.
 
-## 構成
+## Project structure
 
 ```text
-OpenAIStatusMac.xcodeproj       macOSアプリ＋Widget Extension
-OpenAIStatus/App               SwiftUI画面、監視、通知設定
-OpenAIStatus/Shared            APIモデル、取得処理、差分通知ロジック
-OpenAIStatus/Widget            WidgetKit／ControlWidget
-Tests                          XCTest
-Verification                   公式APIのライブ検証
-scripts/setup.sh               初回セットアップ
-scripts/verify.sh              再現可能な検証
+OpenAIStatusMac.xcodeproj       macOS app and Widget Extension
+OpenAIStatus/App               SwiftUI UI, monitoring, and notification settings
+OpenAIStatus/Shared            API models, client, and notification-diff policy
+OpenAIStatus/Widget            WidgetKit and ControlWidget implementation
+Tests                          XCTest coverage
+Verification                   Live API verifier
+scripts/setup.sh               First-run setup
+scripts/verify.sh              Reproducible verification
 ```
 
-## よくある問題
+## Troubleshooting
 
 ### `Embedded binary is not signed with the same certificate as the parent app.`
 
-`OpenAI Status`と`OpenAIStatusWidget`のSigning Teamを同じものにしてください。
+Set the same Signing Team for the `OpenAI Status` and `OpenAIStatusWidget` targets.
 
-### ビルドは成功するがウィジェット一覧に出ない
+### The build succeeds, but the widget is missing from the gallery
 
-次を確認してください。
+Check that:
 
-- アプリを一度起動したか
-- Widget Extensionも同じTeamで署名されているか
-- `OpenAIStatusWidget.entitlements`のApp SandboxとOutgoing Connectionsが有効か
-- 古いビルドではなく、現在のXcodeビルドを起動しているか
+- You launched the app at least once.
+- The Widget Extension uses the same Signing Team as the host app.
+- App Sandbox and Outgoing Connections are enabled in `OpenAIStatusWidget.entitlements`.
+- You launched the current Xcode build rather than an older copy of the app.
 
-Debugビルドで表示される `not stripping binary because it is signed` は、署名済みバイナリをstripしなかったという警告で、今回の既知の非致命的警告です。
+The Debug warning `not stripping binary because it is signed` is a known, non-fatal warning for this project.
 
-### 通知が来ない
+### Notifications do not appear
 
-1. アプリのベルボタンから通知設定を開きます。
-2. macOSの通知許可が「許可済み」か確認します。
-3. 「テスト通知を送る」を実行します。
-4. macOSの「システム設定 → 通知」も確認します。
+1. Open notification settings from the bell button.
+2. Confirm that the macOS authorization status is `Allowed`.
+3. Send a test notification from the settings window.
+4. Check **System Settings → Notifications** in macOS.
 
-## ビルド済みアプリについて
+## Prebuilt application
 
-このリポジトリはソース配布です。Developer IDで署名・公証したバイナリは同梱していません。利用者自身のXcodeとSigning Teamでビルドする方式にしています。
+This repository distributes source code. It does not include a Developer ID-signed or notarized binary. Build the app locally with your own Xcode Signing Team.
 
-## ライセンス
+## License
 
 [MIT License](LICENSE)
 
-OpenAI、ChatGPTおよび関連名称は、それぞれの権利者に帰属します。
+OpenAI, ChatGPT, and related names belong to their respective owners.
