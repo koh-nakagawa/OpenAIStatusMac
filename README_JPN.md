@@ -18,16 +18,45 @@ OpenAIの公式ステータスをmacOSで確認する、SwiftUI／WidgetKit製�
 
 - [SwiftUI + WidgetKitでOpenAIの障害を見逃さないmacOSアプリを作った（Qiita）](https://qiita.com/KohN/items/42685192921c730d5f8b)
 
-## 必要環境
+## Xcodeを使わずにインストール
+
+Universal形式のビルド済みアプリは、macOS 14以上のAppleシリコンMacとIntel Macに対応します。コントロールセンター用ControlWidgetはmacOS 26以上でのみ表示されます。
+
+### ブラウザからダウンロード
+
+1. [最新のGitHub Release](https://github.com/koh-nakagawa/OpenAIStatusMac/releases/latest)を開きます。
+2. `OpenAIStatusMac-unnotarized.zip`をダウンロードします。
+3. ZIPを展開し、`OpenAI Status.app`を「アプリケーション」フォルダへ移動します。
+4. アプリを一度開きます。
+5. macOSに止められた場合は「システム設定 → プライバシーとセキュリティ」を開き、OpenAI Statusの「このまま開く」を押します。
+6. アプリを起動し、通知の使用を許可します。
+
+この無料版はApple Development証明書で署名していますが、Appleの公証は受けていません。そのため初回のみGatekeeperの手動許可が必要です。Gatekeeperを無効化したり、quarantine属性を削除したりしないでください。
+
+Releaseにはチェックサム確認用の`OpenAIStatusMac-unnotarized.zip.sha256`も添付しています。
+
+### Git経由でインストール
+
+次のコマンドは同じRelease ZIPを検証して`~/Applications`へインストールします。
+
+```sh
+git clone https://github.com/koh-nakagawa/OpenAIStatusMac.git
+cd OpenAIStatusMac
+./scripts/install.sh
+```
+
+このインストーラーはGatekeeperを無効化せず、quarantine属性も削除しません。初回起動が止められた場合は、上記の「このまま開く」を使用してください。
+
+アプリを一度起動した後、下記手順でデスクトップ、通知センター、コントロールセンターへ追加できます。ブラウザからインストールするだけなら、Xcode、Git、Apple IDはいずれも不要です。
+
+## ソースからビルド
+
+開発用ビルドには次が必要です。
 
 - macOS 14.0以上
 - Xcode 26.0以上（macOS 26 SDKのControlWidget APIをコンパイルするため）
 - Git
-- ウィジェットを実際に登録する場合は、Xcodeへ追加したApple ID
-
-アプリ本体と通常のWidgetKitウィジェットはmacOS 14以上で動作します。コントロールセンター用ControlWidgetはmacOS 26以上でのみ表示されます。
-
-## 最短手順
+- Widget Extension登録用にXcodeへ追加したApple ID
 
 ターミナルで次を実行します。
 
@@ -120,6 +149,8 @@ Tests                          XCTest
 Verification                   公式APIのライブ検証
 scripts/setup.sh               初回セットアップ
 scripts/verify.sh              再現可能な検証
+scripts/install.sh             最新Release用のXcode不要インストーラー
+scripts/build-release-zip.sh   メンテナー用Release作成スクリプト
 ```
 
 ## よくある問題
@@ -146,9 +177,11 @@ Debugビルドで表示される `not stripping binary because it is signed` は
 3. 「テスト通知を送る」を実行します。
 4. macOSの「システム設定 → 通知」も確認します。
 
-## ビルド済みアプリについて
+## 配布とセキュリティ
 
-このリポジトリはソース配布です。Developer IDで署名・公証したバイナリは同梱していません。利用者自身のXcodeとSigning Teamでビルドする方式にしています。
+このプロジェクトの公式バイナリ配布先はGitHub Releasesだけです。現在のビルド済みアプリはApple Development署名・未公証のため、初回のみGatekeeperの手動許可が必要です。Developer ID署名・公証済み配布と同等ではありません。
+
+メンテナーは`OPENAI_STATUS_DEVELOPMENT_TEAM=YOUR_TEAM_ID ./scripts/build-release-zip.sh 1.1.0`で配布物を再現できます。スクリプトはKeychain内の有効なApple Development証明書を選択し、ホストアプリと内包Widget Extensionの署名、両者のTeam ID一致を確認してから、`ditto`でZIP化してSHA-256チェックサムを出力します。証明書が複数ある場合は`OPENAI_STATUS_CODE_SIGN_IDENTITY`で指定できます。
 
 ## ライセンス
 

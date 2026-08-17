@@ -292,12 +292,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "OpenAI Status";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor;
 				PRODUCT_NAME = "OpenAI Status";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -310,12 +310,12 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "OpenAI Status";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor;
 				PRODUCT_NAME = "OpenAI Status";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -330,10 +330,10 @@
 				CODE_SIGN_ENTITLEMENTS = OpenAIStatus/Widget/OpenAIStatusWidget.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = OpenAIStatus/Widget/Info.plist;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor.Widget;
 				PRODUCT_NAME = OpenAIStatusWidget;
 				SKIP_INSTALL = YES;
@@ -349,10 +349,10 @@
 				CODE_SIGN_ENTITLEMENTS = OpenAIStatus/Widget/OpenAIStatusWidget.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = OpenAIStatus/Widget/Info.plist;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = jp.local.OpenAIStatusMonitor.Widget;
 				PRODUCT_NAME = OpenAIStatusWidget;
 				SKIP_INSTALL = YES;
