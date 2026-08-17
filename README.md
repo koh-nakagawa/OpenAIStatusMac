@@ -19,18 +19,47 @@ An unofficial, open-source macOS app built with SwiftUI and WidgetKit for monito
 - [Qiita: Building a macOS OpenAI status monitor with SwiftUI and WidgetKit](https://qiita.com/KohN/items/42685192921c730d5f8b)
 - [Japanese README](README_JPN.md)
 
-## Requirements
+## Install without Xcode
+
+The universal prebuilt app supports both Apple silicon and Intel Macs running macOS 14 or later. The Control Center widget is available only on macOS 26 or later.
+
+### Browser download
+
+1. Open the [latest GitHub Release](https://github.com/koh-nakagawa/OpenAIStatusMac/releases/latest).
+2. Download `OpenAIStatusMac-unnotarized.zip`.
+3. Extract the ZIP and move `OpenAI Status.app` to your `Applications` folder.
+4. Try to open the app once.
+5. If macOS blocks it, open **System Settings → Privacy & Security** and click **Open Anyway** for OpenAI Status.
+6. Launch the app and allow notifications when prompted.
+
+This free build is signed with an Apple Development certificate but is not notarized by Apple. The one-time Gatekeeper approval is therefore expected. Do not disable Gatekeeper and do not remove quarantine attributes.
+
+The release also includes `OpenAIStatusMac-unnotarized.zip.sha256` for checksum verification.
+
+### Install from Git
+
+This downloads the same verified release archive and installs the app in `~/Applications`:
+
+```sh
+git clone https://github.com/koh-nakagawa/OpenAIStatusMac.git
+cd OpenAIStatusMac
+./scripts/install.sh
+```
+
+The installer never disables Gatekeeper or removes quarantine attributes. If the first launch is blocked, use the same **Open Anyway** procedure above.
+
+After launching the app once, add the desktop, Notification Center, or Control Center widget as described below. Xcode, Git, and an Apple ID are not required when installing from the browser.
+
+## Build from source
+
+Source development requires:
 
 - macOS 14.0 or later
 - Xcode 26.0 or later, required to compile the ControlWidget API from the macOS 26 SDK
 - Git
-- An Apple ID added to Xcode if you want macOS to register the widget extension
+- An Apple ID added to Xcode for Widget Extension registration
 
-The main app and standard WidgetKit widgets support macOS 14 or later. The Control Center widget is available only on macOS 26 or later.
-
-## Quick start
-
-Run the following commands in Terminal:
+Run:
 
 ```sh
 git clone https://github.com/koh-nakagawa/OpenAIStatusMac.git
@@ -38,7 +67,7 @@ cd OpenAIStatusMac
 ./scripts/setup.sh
 ```
 
-`setup.sh` checks the development environment, runs the tests, verifies access to the official status API, performs an unsigned Debug build, and then opens the Xcode project.
+`setup.sh` checks the development environment, runs the tests, verifies access to the official status API, performs an unsigned Debug build, and opens the Xcode project.
 
 When Xcode opens:
 
@@ -121,6 +150,8 @@ Tests                          XCTest coverage
 Verification                   Live API verifier
 scripts/setup.sh               First-run setup
 scripts/verify.sh              Reproducible verification
+scripts/install.sh             Xcode-free installer for the latest release
+scripts/build-release-zip.sh   Maintainer release packager
 ```
 
 ## Troubleshooting
@@ -147,9 +178,11 @@ The Debug warning `not stripping binary because it is signed` is a known, non-fa
 3. Send a test notification from the settings window.
 4. Check **System Settings → Notifications** in macOS.
 
-## Prebuilt application
+## Distribution and security
 
-This repository distributes source code. It does not include a Developer ID-signed or notarized binary. Build the app locally with your own Xcode Signing Team.
+GitHub Releases are the only official binary-download location for this project. The current prebuilt app is Apple Development-signed and unnotarized, so macOS requires one manual Gatekeeper approval on first launch. It is not equivalent to a Developer ID-signed and notarized release.
+
+Maintainers can reproduce the archive with `OPENAI_STATUS_DEVELOPMENT_TEAM=YOUR_TEAM_ID ./scripts/build-release-zip.sh 1.1.0`. The script selects a valid Apple Development identity from the Keychain, verifies the host app and embedded Widget Extension signatures, requires the same signing Team ID for both, packages the app with `ditto`, and writes a SHA-256 checksum. `OPENAI_STATUS_CODE_SIGN_IDENTITY` can select a specific certificate when more than one identity is installed.
 
 ## License
 
